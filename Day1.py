@@ -13,4 +13,4 @@ def summation(arr, k):
             return True
     return False
 
-print(summ([10, 15, 3, 7], 17))
+print(summation([10, 15, 3, 7], 17))
