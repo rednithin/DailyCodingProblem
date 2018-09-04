@@ -11,6 +11,7 @@ Follow-up: Can you do this in O(N) time and constant space?
 '''
 
 from collections import deque
+import random
 
 
 def maximumNonAdjacentSum(arr):
@@ -36,10 +37,20 @@ def GeeksForGeeksSoln(arr):
     return max(incl, excl)
 
 
+a = [random.randint(-100, 100) for _ in range(10)]
+b = [random.randint(-100, 100) for _ in range(10)]
+c = [random.randint(-100, 100) for _ in range(10)]
+
 print(maximumNonAdjacentSum([2, 4, 6, 2, 5]))
 print(maximumNonAdjacentSum([5, 1, 1, 5]))
 print(maximumNonAdjacentSum([5, 5, 10, 100, 10, 5]))
+print(maximumNonAdjacentSum(a))
+print(maximumNonAdjacentSum(b))
+print(maximumNonAdjacentSum(c))
 
 print(GeeksForGeeksSoln([2, 4, 6, 2, 5]))
 print(GeeksForGeeksSoln([5, 1, 1, 5]))
 print(GeeksForGeeksSoln([5, 5, 10, 100, 10, 5]))
+print(GeeksForGeeksSoln(a))
+print(GeeksForGeeksSoln(b))
+print(GeeksForGeeksSoln(c))
