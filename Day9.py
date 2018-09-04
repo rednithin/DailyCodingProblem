@@ -14,6 +14,22 @@ from collections import deque
 import random
 
 
+def modifiedMaximumNonAdjacentSum(arr):
+    d = deque()
+    d.append(0)
+    d.append(arr[0])
+    d.append(arr[1])
+    if arr[0] < 0:
+        d.append(arr[2])
+    else:
+        d.append(arr[0] + arr[2])
+    for num in arr[3:]:
+        val = max(d[0], d[1], d[2], d[3], d[0] + num, d[1] + num, d[2] + num)
+        d.append(val)
+        d.popleft()
+    return d[-1]
+
+
 def maximumNonAdjacentSum(arr):
     d = deque()
     d.append(arr[0])
@@ -47,6 +63,17 @@ print(maximumNonAdjacentSum([5, 5, 10, 100, 10, 5]))
 print(maximumNonAdjacentSum(a))
 print(maximumNonAdjacentSum(b))
 print(maximumNonAdjacentSum(c))
+
+print()
+
+print(modifiedMaximumNonAdjacentSum([2, 4, 6, 2, 5]))
+print(modifiedMaximumNonAdjacentSum([5, 1, 1, 5]))
+print(modifiedMaximumNonAdjacentSum([5, 5, 10, 100, 10, 5]))
+print(modifiedMaximumNonAdjacentSum(a))
+print(modifiedMaximumNonAdjacentSum(b))
+print(modifiedMaximumNonAdjacentSum(c))
+
+print()
 
 print(GeeksForGeeksSoln([2, 4, 6, 2, 5]))
 print(GeeksForGeeksSoln([5, 1, 1, 5]))
